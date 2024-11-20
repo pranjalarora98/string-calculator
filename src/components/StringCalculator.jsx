@@ -1,25 +1,19 @@
 import React, { useState } from "react";
-import {add} from '../utils';
-
+import Add from "../utils";
 const StringCalculator = () => {
   const [input, setInput] = useState("");
-  const [result, setResult] = useState(0);
-  const [error, setError] = useState("")
-
+  const [result, setResult] = useState("");
+  const [error, setError] = useState("");
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
-
   const handleCalculate = () => {
-    try {
-      setResult(add(input)); 
-      setError(""); 
-    } catch (e) {
-      setError(e.message);
-      setResult(0);
-    }
+    const value = input.replace(/\\n/g, "\n")
+    const result = Add(value);
+    console.log({value});
+    console.log({ result });
+    setResult(result);
   };
-
   return (
     <div>
       <h1>String Calculator</h1>
@@ -38,5 +32,4 @@ const StringCalculator = () => {
     </div>
   );
 };
-
 export default StringCalculator;
