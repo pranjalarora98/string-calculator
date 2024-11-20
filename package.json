@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.25.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^16.0.1",
@@ -51,6 +52,6 @@
     ],
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
-  }
+    }
   }
 }
