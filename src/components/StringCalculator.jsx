@@ -3,7 +3,6 @@ import Add from "../utils";
 const StringCalculator = () => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
-  const [error, setError] = useState("");
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
@@ -27,7 +26,6 @@ const StringCalculator = () => {
       <button onClick={handleCalculate}>Calculate</button>
       <div>
         <h2>Result: {result}</h2>
-        {error && <h3 style={{ color: "red" }}>{error}</h3>}
       </div>
     </div>
   );
